@@ -1,4 +1,4 @@
-//titik colorfull
+//Line
 
 #include <windows.h>
 #ifdef _APPLE_
@@ -9,30 +9,17 @@
 
 #include <stdlib.h>
 
-void titik()
+void line()
 {
     glClear(GL_COLOR_BUFFER_BIT);
     glColor3f(1.0, 1.0, 1.0);
 
-    glPointSize(8.0);
-    glBegin(GL_POINTS);
+    glLineWidth(2.5);
+    glBegin(GL_LINES);
 
-    glColor3f(1.0, 1.0, 1.0);       //white
-    glVertex3f(0.4, 0.1, 0.0);
-    glColor3f(0.0, 1.0, 1.0);       //cyan
-    glVertex3f(0.5, 0.2, 0.0);
-    glColor3f(1.0, 1.0, 0.0);       //yellow
-    glVertex3f(0.4, 0.3, 0.0);
-    glColor3f(0.0, 1.0, 1.0);       //cyan
-    glVertex3f(0.5, 0.4, 0.0);
-    glColor3f(0.0, 1.0, 0.0);       //green
-    glVertex3f(0.4, 0.5, 0.0);
-    glColor3f(0.0, 1.0, 1.0);       //cyan
-    glVertex3f(0.5, 0.6, 0.0);
-    glColor3f(1.0, 0.0, 0.0);       //red
-    glVertex3f(0.4, 0.7, 0.0);
-    glColor3f(0.0, 1.0, 1.0);       //cyan
-    glVertex3f(0.5, 0.8, 0.0);
+    glColor3f(0.0, 1.0, 1.0);   //Warna Cyan
+    glVertex3f(0.5, 0.8, 0.0);  // Koordinat Titik 1
+    glVertex3f(0.5, 0.2, 0.0);  // Koordinat Titik 2
 
     glEnd();
     glFlush();
@@ -53,7 +40,7 @@ int main(int iArgc, char** cppArgv){
     glutInitWindowPosition(200, 200);
     glutCreateWindow("Point");
     Initialize();
-    glutDisplayFunc(titik);
+    glutDisplayFunc(line);
     glutMainLoop();
     return 0;
 }
